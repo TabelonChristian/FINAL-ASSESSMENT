@@ -1,20 +1,20 @@
-//Tasks.jsx component
+// Tasks.jsx component
 import React, { useState } from 'react';
 import Task from './Task';
 import SearchFilter from './SearchFilter';
 import './Tasks.css';
 
 const tasks = [
-  { description: 'Interviewing', assignee: 'Josh', deadline: '2024-03-15', status: ' ' },
-  { description: 'Compiling', assignee: 'Dale', deadline: '2024-03-20', status: ' ' },
-  { description: 'Documentation', assignee: 'Leigh', deadline: '2024-03-12', status: ' ' },
-  { description: 'Coding', assignee: 'Patrice', deadline: '2024-03-18', status: ' ' },
-  { description: 'Planning', assignee: 'Jeff', deadline: '2024-03-22', status: ' ' },
-  { description: 'Organizing', assignee: 'Jethan', deadline: '2024-03-25', status: ' ' },
-  { description: 'Researching', assignee: 'Josh', deadline: '2024-03-25', status: ' ' },
-  { description: 'Coding', assignee: 'Jacob', deadline: '2024-03-25', status: ' ' },
-  { description: 'Interviewing', assignee: 'Andre', deadline: '2024-03-25', status: ' ' },
-  { description: 'Documentation', assignee: 'Leigh', deadline: '2024-03-25', status: ' ' },
+  { description: ' Cleaning', assignee: 'Josh', deadline: '2023-03-15', status: ' ' },
+  { description: ' Cooking', assignee: 'Dale', deadline: '2023-03-20', status: ' ' },
+  { description: ' Writing', assignee: 'Leigh', deadline: '2023-03-12', status: ' ' },
+  { description: ' Coding', assignee: 'Patrice', deadline: '2023-03-18', status: ' ' },
+  { description: ' Planning', assignee: 'Jeff', deadline: '2023-03-22', status: ' ' },
+  { description: ' Organizing', assignee: 'Jethan', deadline: '2023-03-25', status: ' ' },
+  { description: ' Researching', assignee: 'Josh', deadline: '2023-03-25', status: ' ' },
+  { description: ' Coding', assignee: 'Jacob', deadline: '2023-03-25', status: ' ' },
+  { description: ' Shopping', assignee: 'Andre', deadline: '2023-03-25', status: ' ' },
+  { description: ' Cleaning', assignee: 'Leigh', deadline: '2023-03-25', status: ' ' },
 ];
 
 const Tasks = () => {
@@ -36,26 +36,35 @@ const Tasks = () => {
   };
 
   return (
-    <div class= "container">
+    <div className="container">
       <h2>Tasks</h2>
       <SearchFilter handleSearch={handleSearch} />
-      <ul>
-        <li className="header">
-          <span>No.</span>
-          <span>Task Description</span>
-          <span>Assigne</span>
-          <span></span>
-          <span></span>
-        </li>
-        {filteredTasks.map((task, index) => (
-          <Task
-            key={index}
-            task={task}
-            index={index}
-            handleToggleStatus={handleToggleStatus}
-          />
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Task Description</th>
+            <th>Assignee</th>
+            <th>Deadline</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredTasks.map((task, index) => (
+            <tr>
+              <td>{index + 1}</td>
+              <td>{task.description}</td>
+              <td>{task.assignee}</td>
+              <td>{task.deadline}</td>
+              <td>{task.status}</td>
+              <td>
+                <button onClick={() => handleToggleStatus(index)}>Toggle Status</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

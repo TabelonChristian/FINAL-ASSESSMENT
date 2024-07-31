@@ -5,7 +5,7 @@ import Tasks from './Tasks';
 const App = () => {
   return (
     <div>
-      <h1>Task List</h1>
+      <h1 class = "title">Task List</h1>
       <Tasks />
     </div>
   );

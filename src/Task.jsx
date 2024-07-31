@@ -1,18 +1,18 @@
 // Task.jsx component
-
-
 import React from 'react';
 
 const Task = ({ task, index, handleToggleStatus }) => {
   return (
-    <li>
-      <span>{index + 1}</span>
-      <span>{task.description}</span>
-      <span>{task.assignee}</span>
-      {task.status === 'Pending' && <span>{task.deadline}</span>}
-      <span>{task.status}</span>
-      <button onClick={() => handleToggleStatus(index)}>Toggle Status</button>
-    </li>
+    <tr>
+      <td>{index + 1}</td>
+      <td>{task.description}</td>
+      <td>{task.assignee}</td>
+      {task.status === 'Pending' && <td>{task.deadline}</td>}
+      <td>{task.status}</td>
+      <td>
+        <button onClick={() => handleToggleStatus(index)}>Toggle Status</button>
+      </td>
+    </tr>
   );
 };
 

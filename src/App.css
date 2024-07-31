@@ -1,35 +1,41 @@
-body {
-  background-color: #f0f0f0; /* 50% white */
+/* App.css */
+.app {
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  background-color: #87ceeb; /* 30% blue */
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
-li {
-  padding: 12px;
-  border-bottom: 1px solid #ccc;
-}
-
-li:last-child {
-  border-bottom: none;
-}
-
-li div {
-  display: flex;
-  justify-content: space-between;
-}
-
-li div span {
-  flex-basis: 25%;
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
   text-align: left;
-  padding: 12px;
-  background-color: #d7bde2; /* 20% purple */
 }
 
-li div span:nth-child(even) {
-  background-color: #fff; /* 50% white */
+th {
+  background-color: #f0f0f0;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+input[type="search"] {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  margin: 0 10px;
+}
+.title {
+justify-content: center;
+text-align: center;
+
 }
